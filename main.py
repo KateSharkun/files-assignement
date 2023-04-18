@@ -12,17 +12,12 @@ def clean_cache():
 
 
 def cache_zip(zip_path: str, cache_path: str):
-    zip_path = zip_path.replace('\\', "//" )
-    cache_path = cache_path.replace('\\', "//" )
     shutil.unpack_archive(zip_path, cache_path)
-
-
 
 
 def cached_files():
     files_names_dir = [entry.path for entry in os.scandir(r'C:\Users\Admin\Documents\Winc\hello-world\files\cache') if entry.is_file()]
     return files_names_dir
-
 
 
 def find_password(files):
@@ -35,8 +30,14 @@ def find_password(files):
                 return(password)
 
         file_text.close()
-    
 
+
+        
+        
+'''
+wincpy didnt accept the result password string returned by find_password, other functions implemented correctly
+
+'''
 
 
 
